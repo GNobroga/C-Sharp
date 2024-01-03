@@ -137,5 +137,4 @@ No Javascript tem o **AbortController** no C# tem o **CancellationTokenSource** 
     }, token);
 
 ```
-=======
->>>>>>> 1ff71fce5c8a6ba4d05492c256a0541eea96e861:README.md
+

@@ -1,4 +1,4 @@
-# Novidades C# 12
+# Novidades C# 12 e Formas de otimizar o código
 
 ### Logs
 
@@ -73,4 +73,66 @@ Dentro da classe Random tem a classe **Shared** que contém métodos generics ú
     string[] names = ["Gabriel", "Lívia", "Children"];
 
     Array.ForEach(Random.Shared.GetItems(names, 2), Console.WriteLine);
+```
+
+#### Otimization Comparison
+
+```cs
+    public bool TheNamesIsSimilar(string first, string second)
+    {
+        return string.Equals(first, second, StringComparsion.OrdinalIgnoreCase);
+    }
+```
+
+
+### Null Condition Operator
+
+Permite navegar sobre propriedades de um objeto que pode ser nulo, mas sem gerar Exception. Isso evita a utilização de **If** desnecessários.
+
+```cs
+    customer?.Orders?.Ship();
+```
+
+### Null Argument Checks 
+
+**ArgumentNullException** é uma classe que contém metódos pra validar objetos nulos.
+
+
+```cs
+    public void MapTo <T> (T source) where T: class
+    {
+        ArgumentNullException.ThrowIfNull(source);
+    }
+```
+
+### Parallel ForEach Loop
+
+Permite executar um loop ForEach de forma assincrona, dividindo em threads, muito útil para operações custosas.
+
+```cs
+   List<string> paths = GetFilePathList();
+
+   Parallel.ForEach(paths, CompressFile);
+```
+
+### Cancel Tasks 
+
+No Javascript tem o **AbortController** no C# tem o **CancellationTokenSource** pra cancelar operações assincronas por meio de Task. Lembrando que isso não funciona com TaskValue, inclusive, isso é uma das diferenças entre utilizar Task e TaskValue.
+
+```cs
+
+    CancellationTokenSource tokenSource = new()/
+    CancellationToken token = tokenSource.Token;
+
+    Task task = Task.Run(async () => 
+    {
+        await using var reader = new("./file.txt");
+
+        while (reader.ReadLine() is {} line && !token.IsCancellationRequested)
+        {
+            Console.WriteLine(line);
+        }
+        
+    }, token);
+
 ```

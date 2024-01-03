@@ -21,3 +21,6 @@ Array.ForEach(Features.Names, Console.WriteLine);
 Console.WriteLine();
 
 Array.ForEach(Random.Shared.GetItems(Features.Names, 2), Console.WriteLine);
+
+// {} é o mesmo que string.empty
+Console.WriteLine(string.Empty is {});

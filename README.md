@@ -74,6 +74,7 @@ Dentro da classe Random tem a classe **Shared** que contém métodos generics ú
 
     Array.ForEach(Random.Shared.GetItems(names, 2), Console.WriteLine);
 ```
+<<<<<<< HEAD:RADME.md
 
 #### Otimization Comparison
 
@@ -136,3 +137,5 @@ No Javascript tem o **AbortController** no C# tem o **CancellationTokenSource** 
     }, token);
 
 ```
+=======
+>>>>>>> 1ff71fce5c8a6ba4d05492c256a0541eea96e861:README.md

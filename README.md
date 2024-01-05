@@ -138,3 +138,19 @@ No Javascript tem o **AbortController** no C# tem o **CancellationTokenSource** 
 
 ```
 
+### Attributes Validation
+
+Alguns atributos de validação de model, muito bom como alternativa do RegexExpression.
+
+```cs
+
+public readonly record struct Product (
+    [Base64String]
+    string Name;
+    [DaniedValues("Eletronic", "Clean")]
+    string Category;
+    [AllowedValues("Brazil", "Castelo")]
+    string Location;
+);
+
+```

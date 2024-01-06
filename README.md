@@ -154,3 +154,39 @@ public readonly record struct Product (
 );
 
 ```
+
+### Alias with using directive
+
+Permite definir um alias para um tipo, namespace, etc, por exemplo, no C existe o **typedef** que permite dar um nome diferente para o tipo da struct. No C# é semelhante com o using.
+
+Exemplo:
+
+```cs
+    using Point3D = string; // Dando um alias para string
+
+    Point3D point = "Hello world";
+
+```
+
+### Collection Expression
+
+É uma forma mais simples de se inicializar coleções do tipo, arrays, spans, ReadonlySpan e lists
+
+```cs
+    int[] numeros = [1, 2, 3, 4, 5];
+
+    Span<string> regiaoSul = ["pr", "sc"];
+
+    ReadOnlySpan<string> regiaoSuldeste = ["es", "mg", "rj", "sp"];
+
+    List<string> frutas = ["Maçã", "Pera"];
+```
+
+
+### Default values for lambda expression
+
+Podemos definir agora valores padrões pra funções anônimas
+
+```cs
+    var increment = (int origem, int quantificador = 10) => origem * quantificador;
+```

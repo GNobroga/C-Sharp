@@ -190,3 +190,22 @@ Podemos definir agora valores padrões pra funções anônimas
 ```cs
     var increment = (int origem, int quantificador = 10) => origem * quantificador;
 ```
+
+
+### Explicit operator
+
+Isso já existia em versões antigas
+
+```cs
+
+    public class Fish (string type) 
+    {
+        public string Type { get; private set; } = type;
+
+        public static explicit operator int (Fish instance) => instance.GetHashCode();
+    }
+
+    var fish = new Fish("Morcego");
+
+    var castToInt = (int) fish;
+```

@@ -24,4 +24,7 @@ Array.ForEach(Random.Shared.GetItems(Features.Names, 2), Console.WriteLine);
 Console.WriteLine(string.Empty is {});
 
 
+Span<string> values = ["asa", "sas"," as"];
+
+Console.WriteLine(values.ContainsAny("asa", "as"));
 

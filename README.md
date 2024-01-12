@@ -209,3 +209,14 @@ Isso já existia em versões antigas
 
     var castToInt = (int) fish;
 ```
+
+### Property Pattern
+
+Permite fazer validações utilizando o padrão de property
+
+````cs
+    if (product is { Category: "books", Price: > 100 })
+    {
+        Console.WriteLine("This is truth");
+    }
+```

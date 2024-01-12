@@ -212,7 +212,7 @@ Isso já existia em versões antigas
 
 ### Property Pattern
 
-Permite fazer validações utilizando o padrão de property
+Permite fazer validações utilizando o padrão de property, as condições de cada propriedade representa uma operação &&
 
 ````cs
     if (product is { Category: "books", Price: > 100 })

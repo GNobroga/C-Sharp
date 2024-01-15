@@ -220,3 +220,15 @@ Permite fazer validações utilizando o padrão de property, as condições de c
         Console.WriteLine("This is truth");
     }
 ```
+
+### in method
+
+Agora com o in é possível tornar um tipo como sendo imutável em questão de referência, ou seja, eu não consigo reatribuir o parâmetro prod para uma outra instância.
+
+
+```cs
+    void Fnc(in Product prod)
+    {
+        prod.Name = "Smartphone";
+    }
+```

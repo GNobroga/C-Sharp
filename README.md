@@ -232,3 +232,16 @@ Agora com o in é possível tornar um tipo como sendo imutável em questão de r
         prod.Name = "Smartphone";
     }
 ```
+
+### Operador ??=
+
+Esse operador permite atribuir valor a uma variável nula caso ela esteja com valor nulo, caso contrário, não será atribuído nada.
+
+```cs
+    string? name = null;
+    string initialName = "Gabriel Cardoso"
+
+    name ??= initialName; 
+
+    Console.Writeline(name); // Output: Gabriel Cardoso
+```

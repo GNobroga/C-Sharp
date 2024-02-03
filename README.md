@@ -214,7 +214,7 @@ Isso já existia em versões antigas
 
 Permite fazer validações utilizando o padrão de property, as condições de cada propriedade representa uma operação &&
 
-````cs
+```cs
     if (product is { Category: "books", Price: > 100 })
     {
         Console.WriteLine("This is truth");
